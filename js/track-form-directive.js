@@ -3,8 +3,10 @@ function trackForm () {
         restrict: 'E',
         scope: {},
         bindToController: {
-            data: '='
+            data: '=',
+            submit: '&'
         },
+        controller: 'FormController as ctrl',
         templateUrl: '../templates/form.html'
     }
 } ;

@@ -1,6 +1,8 @@
-<form>
-    <input type="text" ng-model="title">
-    <input type="text" ng-model="band">
-    <input type="text" ng-model="genre">
+<pre> {{ ctrl.data | json }} </pre>
+
+<form ng-submit="ctrl.onSubmit();">
+    <input type="text" ng-model="ctrl.data.title" placeholder="title">
+    <input type="text" ng-model="ctrl.data.band" placeholder="band name">
+    <input type="text" ng-model="ctrl.data.genre" placeholder="genre">
     <button type="submit">Submit</button>
 </form>

@@ -6,19 +6,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
 
-    <title>Form</title>
+    <title>PLaylist</title>
 </head>
 <body>
+    <style>
+        .title {
+            margin-top: 5px;
+            margin-left: 15px;
+        };
+    </style>
     <div class="container">
+        <h1>Create your playlist</h1>
         <div ng-controller="ModelController as model">
             <track-form data="model.newTrack" submit="model.trackSubmit();"></track-form>
+        
+            <h2>Your Playlist</h2>
+            <!-- {{ model.catalog }} -->
+            <ul ng-repeat="track in model.catalog">
+                <li>
+                    <div class="d-flex">
+                        <div>
+                            <h4>title: {{ track.title }} </h4>
+                        </div>
+                        <div>
+                            <p class="title">by: {{ track.band }} / {{ track.genre }} </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <h1>Track list</h1>
         <div ng-controller="ModelController as model">
-            {{ model.newTrack }}
+            {{ model.catalog }}
             <ul ng-repeat="track in model.catalog">
                 <li>
                     <h3>title: {{ track.title }} </h3>
@@ -26,7 +48,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
     
     <script src="js/app.js"></script>
     <script src="js/model-controller.js"></script>

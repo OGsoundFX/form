@@ -8,6 +8,11 @@ function ModelController () {
     this.trackSubmit = () => {
         this.catalog.push(this.newTrack);
         console.log(this.catalog)
+        this.newTrack = {
+            'title': '',
+            'band': '',
+            'genre': '' 
+        };
     };
 };
 

@@ -1,7 +1,7 @@
 function trackForm () {
     return {
         restrict: 'E',
-        scope: {},
+        // scope: {},
         bindToController: {
             data: '=',
             submit: '&'
